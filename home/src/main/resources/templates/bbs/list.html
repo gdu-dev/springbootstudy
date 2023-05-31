@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+
+<!--/* layout/header.html의 head조각으로 head 태그를 바꾼다. */-->
+
+<head th:replace="~{/layout/header::headFrag('BBS목록')}">
+
+
 <body>
 
   <!--/* Variable Expression : ${} (값을 나타낼 때 사용) */-->
@@ -44,7 +46,7 @@
               <td th:text="${bbs.writer}"></td>
               <td>
                 <!-- DEPTH에 의한 들여쓰기 -->
-                <th:block th:each="n:${#numbers.sequence(1,bbs.depth,1)}" th:text="|&nbsp;&nbsp;&nbsp;|"></th:block>
+                <th:block th:each="n:${#numbers.sequence(1,bbs.depth,1)}" th:utext="|&nbsp;&nbsp;&nbsp;|"></th:block>
                 <!-- 답글은 [Re] 표시하기 -->
                 <th:block th:if="${bbs.depth > 0}" th:text="[Re]"></th:block>
                 <!-- 제목 -->
