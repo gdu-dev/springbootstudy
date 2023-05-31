@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 
-<!--/* layout/header.html의 head조각으로 head 태그를 바꾼다. */-->
 
-<head th:replace="~{/layout/header::headFrag('BBS목록')}">
+<!--/* /layout/header.html의 headFrag조각으로 head 태그를 바꾼다. */-->
+<head th:replace="~{/layout/header::headFrag('BBS목록')}"></head>
 
 
 <body>
 
+
   <!--/* Variable Expression : ${} (값을 나타낼 때 사용) */-->
+
+
+  <!--/* /layout/header.html의 gnbFrag조각으로 div 태그를 바꾼다. */-->
+  <div th:replace="~{/layout/header::gnbFrag}"></div>
+
 
   <h1>BBS 목록 보기</h1>
   
